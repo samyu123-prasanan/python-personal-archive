@@ -15,5 +15,8 @@ def get_friendship_meter(name1, name2):
         
     print("Your friendship meter : ", meter)
     
+def get_city():
     
-get_friendship_meter("Purnima", "Sam")    
+    #print("Chennai")
+    return "Chennai"
+
