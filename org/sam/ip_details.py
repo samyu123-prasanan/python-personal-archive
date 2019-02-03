@@ -27,4 +27,6 @@ def startpy(ip_input):
 
 
 if __name__ == '__main__':
-    startpy("192.168.1.5")
+   
+    ip = "192.168.1.5"
+    startpy(ip)
