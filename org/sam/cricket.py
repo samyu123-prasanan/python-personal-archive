@@ -1,10 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
 
-page = requests.get('https://en.wikipedia.org/wiki/Ajinkya_Rahane')
+page = requests.get('https://www.reckontalk.com/cricket-players-date-of-birth/')
 soup = BeautifulSoup(page.text, 'html.parser')    
 
-div_tags = soup.select("div.mw-parser-output p")
+
+div_tags = soup.select("div.panel panel-primary td")
 
 print(div_tags)
 
