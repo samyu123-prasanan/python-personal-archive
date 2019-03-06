@@ -26,13 +26,14 @@ def startpy():
     #print(sheet.nrows)
     
     
-    for i in range (sheet.nrows):
+    for i in range (sheet.ncols):
         #print (sheet.row(i))
-        for j in range (sheet.ncols):
+        for j in range (sheet.nrows):
             
             #print (sheet.row_values(i))
-            print(sheet.cell_value(i, j))
-        #print(end=' ')
+            #print(sheet.cell_value(i, j), end=' ')
+            cell = sheet.cell(i,j)
+            print(cell)
          
          
          
