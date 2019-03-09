@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='main.css') }}">
+  </head>
+<body>
+
+
+<section class="form-style-10">
+<form action="" method = "post">
+ 
+    <div class="section"><span>*</span>FEELI</div>
+
+    <div class="inner-wrap">
+        <label>YouTube Link <input type="text" name="youtube_link" value="https://www.youtube.com/watch?v=7C2z4GqqS5E"></label>
+    </div>
+
+    <div class="inner-wrap">
+        <label>
+            Emotion:
+            <input type="text" name="emotion" value="I feel extremely happy when this song plays.">
+        </label>
+    </div>
+
+    <div class="inner-wrap">
+        <label>Hint (Say something about yourself):
+            <input type="text" name="hint" value="I'm a nightmare dressed like a daydream.">
+        </label>
+    </div>
+  
+  
+  <input type="submit" value="Submit">
+</form> 
+</section>
+
+{% if result %}
+
+
+
+    <section class="form-style-10" style="width:1060px;">
+
+      {% if result.apiresult == 0 %}
+          <div style="width:1000px;">
+            <table id="customers">
+              <tr>
+                <th>YouTube Link</th>
+                <th>Emotion</th>
+                <th>Hint</th>
+              </tr>
+              <tr>
+                <td>{{result.youtube_link}}</td>
+                <td>{{result.emotion}}</td>
+                <td>{{result.hint}}</td>
+              </tr>
+            </table>
+          </div>
+        {% else %}
+          Result Not Found 
+        {% endif %}
+    </section>
+    {% endif %}
+
+</body>
+</html>
