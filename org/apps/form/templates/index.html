@@ -50,11 +50,13 @@
                 <th>Emotion</th>
                 <th>Hint</th>
               </tr>
+              {% for link in result.songs %}  
               <tr>
-                <td>{{result.youtube_link}}</td>
-                <td>{{result.emotion}}</td>
-                <td>{{result.hint}}</td>
+                <td>{{link.youtube_link}}</td>
+                <td>{{link.emotion}}</td>
+                <td>{{link.user_hint}}</td>
               </tr>
+              {% endfor %}
             </table>
           </div>
         {% else %}
