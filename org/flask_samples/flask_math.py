@@ -34,5 +34,11 @@ def add():
     
     return "Serena " + str(c)
 
+@app.route('/reverse')
+def reverse():
+    name = request.args.get('name')
+    name = name[::-1]
+    return name
+
 if __name__ == '__main__':
     app.run()
