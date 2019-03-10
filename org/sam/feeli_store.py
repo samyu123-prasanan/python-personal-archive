@@ -68,8 +68,28 @@ def read_songs():
         #print(song)
         #print(type(song))
         print('Song  ['+str(song["youtube_link"])+'] liked by '+str(song["user_hint"]))
+    return song_list
+
+def add_song(youtube_link, emotion, hint):
+    song_list = read_songs()
+
+    song3 = {
+                'youtube_link': youtube_link, 
+                'emotion': emotion ,
+                'user_hint': hint
+            } 
+    song_list.append(song3)
+
+    file_Name = "FeelI"
+
+    fileObject = open(file_Name,'wb') 
+
+    # this writes the object a to the
+    # file named 'testfile'
+    pickle.dump(song_list,fileObject)   
 
 if __name__ == '__main__':
     #store_songs()
 
+    add_song('https://www.youtube.com/watch?v=t_jHrUE5IOk', 'A song that makes blackmail sound so pleasing.', 'Clean freak, music geek')
     read_songs()

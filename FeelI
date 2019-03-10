@@ -1,0 +1,74 @@
+(lp0
+(dp1
+S'emotion'
+p2
+S'Happiness'
+p3
+sS'youtube_link'
+p4
+S'https://www.youtube.com/watch?v=mytLRy32Viw'
+p5
+sS'user_hint'
+p6
+S'Chennai girl'
+p7
+sa(dp8
+g2
+S'Depressed'
+p9
+sg4
+S'https://www.youtube.com/watch?v=f3FFOBrMmdg'
+p10
+sg6
+S'The gurl with a macbook'
+p11
+sa(dp12
+g2
+S'I feel a burning rage in this song'
+p13
+sg4
+S'https://www.youtube.com/watch?v=7C2z4GqqS5E'
+p14
+sg6
+S'Adai love girl'
+p15
+sa(dp16
+S'emotion'
+p17
+S'A song that makes blackmail sound so pleasing.'
+p18
+sS'youtube_link'
+p19
+S'https://www.youtube.com/watch?v=t_jHrUE5IOk'
+p20
+sS'user_hint'
+p21
+S'Clean freak, music geek'
+p22
+sa(dp23
+S'emotion'
+p24
+VBeautiful song
+p25
+sS'youtube_link'
+p26
+Vhttps://www.youtube.com/watch?v=lpdRqn6xwiM
+p27
+sS'user_hint'
+p28
+VA Khan'ian
+p29
+sa(dp30
+S'emotion'
+p31
+VFeel like dancing
+p32
+sS'youtube_link'
+p33
+Vhttps://www.youtube.com/watch?v=4uuVsrsvdo8
+p34
+sS'user_hint'
+p35
+VA Shreya Goshal Fan
+p36
+sa.
