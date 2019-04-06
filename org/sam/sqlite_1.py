@@ -237,13 +237,13 @@ def main():
         '''
         
         
-        '''
+        
         date1 = "{:%B %d, %Y}".format(datetime.now())
         date2 = "{:%B %d, %Y}".format(datetime.now())
-        project1 = (get_random_word(), date1, date2)
-        id = add_project(conn, project1)
+        project2 = (get_random_word(), date1, date2)
+        id = add_project(conn, project2)
         print('Newly created id  : '+str(id))     
-        '''   
+           
         
         
         select_all_from_table(conn, 'projects')

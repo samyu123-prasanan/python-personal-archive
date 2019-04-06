@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # the above line is to avoid 'SyntaxError: Non-UTF-8 code starting with' error
@@ -53,41 +54,6 @@ def create_connection(db_file):
  
     return None
 
-
-def create_table(conn, create_table_sql):
-    """ create a table from the create_table_sql statement
-    :param conn: Connection object
-    :param create_table_sql: a CREATE TABLE statement
-    :return:
-    """
-    try:
-        c = conn.cursor()
-        c.execute(create_table_sql)
-        
-        print('table created')
-    except Error as e:
-        print(e)
-
-
-def select_all_from_table(conn, table):
-    """
-    Query all rows in the tasks table
-    :param conn: the Connection object
-    :return:
-    """
-    cur = conn.cursor()
-    cur.execute("SELECT * FROM "+table)
- 
-    rows = cur.fetchall()
-    
-    print('rows : '+str(len(rows)))
-    
-    if(len(rows) <= 0):
-        print('No Data available')
- 
-    for row in rows:
-        print(row) 
-        
 def add_project(conn, project):
     """
     Create a new project into the projects table
@@ -102,35 +68,6 @@ def add_project(conn, project):
     
     
     return cur.lastrowid
-
-
-def get_columns(conn, table):
-    """
-    Get All Columns     
-    """
-    cur = conn.cursor()
-    cur = cur.execute('select * from '+table)
-    names = list(map(lambda x: x[0], cur.description))
-    
-    print(names)
-    
-
-def get_random_city():
-    words  = [
-        'Chennai',
-        'Bengaluru',
-        'Cape Town',
-        'Toronto',
-        'Montreal',
-        'Hydrabad',
-        'Trivandrum',
-        'Austin',
-        'Ottawa',
-        'San Francisco',
-        'Alexandria'
-    ]
-    
-    return words[randint(0, len(words)-1)]
 
 def get_random_word():
     words  = [
@@ -150,34 +87,21 @@ def get_random_word():
     
     return words[randint(0, len(words)-1)]
 
-
- 
 def main():
     database = "pythonsqlite.db"
  
     # create a database connection
     conn = create_connection(database)
-    
-    
-    sql_create_projects_table = """ CREATE TABLE IF NOT EXISTS projects (
-                                        id integer PRIMARY KEY,
-                                        name text NOT NULL,
-                                        begin_date text,
-                                        end_date text
-                                    ) """
-    
+
     with conn:
         
         #create_table(conn, sql_create_projects_table)
         
         date1 = "{:%B %d, %Y}".format(datetime.now())
         date2 = "{:%B %d, %Y}".format(datetime.now())
-        project1 = ('Soft toys', date1, date2)
+        project1 = (get_random_word(), date1, date2)
         id = add_project(conn, project1)
-        print('Newly created id  : '+str(id))        
-        
-        select_all_from_table(conn, 'projects')
- 
- 
+        print('Newly created id  : '+str(id))
+
 if __name__ == '__main__':
     main()
